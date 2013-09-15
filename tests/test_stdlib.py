@@ -21,7 +21,7 @@ import pytest
 from structlog import DropEvent
 from structlog.stdlib import LoggerFactory, filter_by_level, WARN, CRITICAL
 
-from .additional_frame import additional_frame
+from additional_frame import additional_frame
 
 
 class TestLoggerFactory(object):
@@ -31,7 +31,7 @@ class TestLoggerFactory(object):
         deducing has to be slightly smarter.
         """
         l = additional_frame(LoggerFactory())
-        assert 'tests.test_stdlib' == l.name
+        assert 'test_stdlib' == l.name
 
 
 class TestFilterByLevel(object):
